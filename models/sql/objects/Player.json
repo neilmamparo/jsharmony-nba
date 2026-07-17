@@ -1,0 +1,40 @@
+{
+    "code_player_position": {
+        "type": "table",
+        "table": "code_player_position",
+        "caption": "Player Position",
+        "columns": [
+            {"name":"code_id","type":"bigint","key":true,"identity":true,"null":false},
+            {"name":"code_seq","type":"smallint"},
+            {"name":"code_val","type":"varchar","length":32,"null":false,"unique":true},
+            {"name":"code_txt","type":"varchar","length":50,"null":false,"unique":true},
+            {"name":"code_code","type":"varchar","length":50},
+            {"name":"code_end_dt","type":"datetime","precision":7},
+            {"name":"code_end_reason","type":"varchar","length":50},
+            {"name":"code_snotes","type":"varchar","length":255},
+            {"name":"code_notes","type":"varchar","length":255},
+            {"name":"code_attrib","type":"varchar","length":50}
+        ],
+        "init_data": [
+            {"code_val":"G","code_txt":"Guard","code_seq":1},
+            {"code_val":"F","code_txt":"Forward","code_seq":2},
+            {"code_val":"C","code_txt":"Center","code_seq":3},
+            {"code_val":"G-F","code_txt":"Guard-Forward","code_seq":4},
+            {"code_val":"F-G","code_txt":"Forward-Guard","code_seq":5},
+            {"code_val":"F-C","code_txt":"Forward-Center","code_seq":6},
+            {"code_val":"C-F","code_txt":"Center-Forward","code_seq":7}
+        ]
+    },
+    
+    "player": {
+        "type": "table",
+        "caption": ["Player", "Players"],
+        "columns": [
+            {"name":"player_id","type":"bigint","key":true,"identity":true,"null":false},
+            {"name":"player_name","type":"varchar","length":64,"null":false},
+            {"name":"team_id","type":"bigint","null":false,"foreignkey":{"Team":"team_id"}},
+            {"name":"player_position","type":"varchar","length":32,"null":false,"foreignkey":{"Code_Player_Position":"code_val"}},
+            {"name":"player_image","type":"varchar","length":255}
+        ]
+    }
+}

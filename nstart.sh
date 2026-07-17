@@ -1,0 +1,1 @@
+supervisor -i test,public,data -w "./models,./app.config.js,./app.config.local.js,./app.js" -e "node,js,json,css,sql,styl" node "./app.js"

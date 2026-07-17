@@ -1,0 +1,30 @@
+{
+  "team_form": {
+    "layout": "form",
+    "table": "team",
+    "title": "Team",
+    "caption": [0, "Team", "Teams"],
+    "actions": "BID",
+    "popup":[1000,620],
+
+    "fields": [
+      {
+        "name": "team_id",
+        "key": 1,
+        "control": "hidden"
+      },
+      {
+        "name": "team_name",
+        "caption": "Team Name"
+      },
+      {
+        "name": "team_conference",
+        "caption": "Conference"
+      },
+      {
+        "name": "team_division",
+        "caption": "Division"
+      }
+    ]
+  }
+}

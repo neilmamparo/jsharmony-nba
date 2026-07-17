@@ -1,0 +1,22 @@
+{
+  "name": "jsharmony2",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "install-windows-service": "winser -i",
+    "uninstall-windows-service": "winser -r"
+  },
+  "dependencies": {
+    "jsharmony": "^1.1.0",
+    "jsharmony-db-sqlite": "^1.1.0",
+    "jsharmony-factory": "^1.1.0",
+    "jsharmony-image-sharp": "^1.1.0",
+    "jsharmony-report": "^1.0.0",
+    "jsharmony-validate": "^1.1.0",
+    "winser": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
+}

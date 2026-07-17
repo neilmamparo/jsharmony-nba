@@ -1,0 +1,17 @@
+{
+    "player_image_select": {
+        "layout": "form",
+        "title": "Select Player for Upload",
+        "caption": [0, "Player Photo", "Player Photo"],
+        "unbound": true,
+        "actions": "BIU",
+        "onecolumn": true,
+
+        "fields": [
+            {"name": "player_id", "caption": "Player", "type": "bigint", "control": "dropdown", "lov": {
+                "sql": "SELECT player_id code_val, player_name code_txt FROM player ORDER BY player_name"
+            }},
+            {"name":"open_player", "caption": "Continue", "unbound": true, "control": "linkbutton", "value": "Upload Photo", "link": "update:player_form&player_id=player_id"}
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+{
+  "code_team_conference": {
+    "type": "table",
+    "table": "code_team_conference",
+    "caption": "Team Conference",
+    "columns": [
+      {"name":"code_id","type":"bigint","key":true,"identity":true,"null":false},
+      {"name":"code_seq","type":"smallint"},
+      {"name":"code_val","type":"varchar","length":32,"null":false,"unique":true},
+      {"name":"code_txt","type":"varchar","length":50,"null":false,"unique":true},
+      {"name":"code_code","type":"varchar","length":50},
+      {"name":"code_end_dt","type":"datetime","precision":7},
+      {"name":"code_end_reason","type":"varchar","length":50},
+      {"name":"code_snotes","type":"varchar","length":255},
+      {"name":"code_notes","type":"varchar","length":255},
+      {"name":"code_attrib","type":"varchar","length":50}
+    ],
+    "init_data": [
+      {"code_val":"EAST","code_txt":"East","code_seq":1},
+      {"code_val":"WEST","code_txt":"West","code_seq":2}
+    ]
+  },
+
+  "code_team_division": {
+    "type": "table",
+    "table": "code_team_division",
+    "caption": "Team Division",
+    "columns": [
+      {"name": "conference_code","type":"varchar","length":32,"null":false,"foreignkey":{"code_team_conference":"code_val"}},
+      {"name":"code_id","type":"bigint","key":true,"identity":true,"null":false},
+      {"name":"code_seq","type":"smallint"},
+      {"name":"code_val","type":"varchar","length":32,"null":false,"unique":true},
+      {"name":"code_txt","type":"varchar","length":50,"null":false,"unique":true},
+      {"name":"code_code","type":"varchar","length":50},
+      {"name":"code_end_dt","type":"datetime","precision":7},
+      {"name":"code_end_reason","type":"varchar","length":50},
+      {"name":"code_snotes","type":"varchar","length":255},
+      {"name":"code_notes","type":"varchar","length":255},
+      {"name":"code_attrib","type":"varchar","length":50}
+    ],
+    "init_data": [
+      {"code_val":"ATLANTIC","code_txt":"Atlantic","conference_code":"EAST","code_seq":1},
+      {"code_val":"CENTRAL","code_txt":"Central","conference_code":"EAST","code_seq":2},
+      {"code_val":"SOUTHEAST","code_txt":"Southeast","conference_code":"EAST","code_seq":3},
+      {"code_val":"NORTHWEST","code_txt":"Northwest","conference_code":"WEST","code_seq":4},
+      {"code_val":"PACIFIC","code_txt":"Pacific","conference_code":"WEST","code_seq":5},
+      {"code_val":"SOUTHWEST","code_txt":"Southwest","conference_code":"WEST","code_seq":6}
+    ]
+  },
+
+  "team": {
+    "type": "table",
+    "caption": ["Team","Teams"],
+    "columns": [
+      {"name":"team_id","type":"bigint","key":true,"identity":true,"null":false},
+      {"name":"team_name","type":"varchar","length":64,"null":false},
+      {"name":"team_conference","type":"varchar","length":32,"null":false,"foreignkey":{"code_team_conference":"code_val"}},
+      {"name":"team_division","type":"varchar","length":32,"null":false,"foreignkey":{"code_team_division":"code_val"}}
+    ],
+    "sample_data": [
+      {"team_id":1,"team_name":"Atlanta Hawks","team_conference":"EAST","team_division":"SOUTHEAST"},
+      {"team_id":2,"team_name":"Boston Celtics","team_conference":"EAST","team_division":"ATLANTIC"},
+      {"team_id":3,"team_name":"Brooklyn Nets","team_conference":"EAST","team_division":"ATLANTIC"},
+      {"team_id":4,"team_name":"Charlotte Hornets","team_conference":"EAST","team_division":"SOUTHEAST"},
+      {"team_id":5,"team_name":"Chicago Bulls","team_conference":"EAST","team_division":"CENTRAL"},
+      {"team_id":6,"team_name":"Cleveland Cavaliers","team_conference":"EAST","team_division":"CENTRAL"},
+      {"team_id":7,"team_name":"Dallas Mavericks","team_conference":"WEST","team_division":"SOUTHWEST"},
+      {"team_id":8,"team_name":"Denver Nuggets","team_conference":"WEST","team_division":"NORTHWEST"},
+      {"team_id":9,"team_name":"Detroit Pistons","team_conference":"EAST","team_division":"CENTRAL"},
+      {"team_id":10,"team_name":"Golden State Warriors","team_conference":"WEST","team_division":"PACIFIC"},
+      {"team_id":11,"team_name":"Houston Rockets","team_conference":"WEST","team_division":"SOUTHWEST"},
+      {"team_id":12,"team_name":"Indiana Pacers","team_conference":"EAST","team_division":"CENTRAL"},
+      {"team_id":13,"team_name":"LA Clippers","team_conference":"WEST","team_division":"PACIFIC"},
+      {"team_id":14,"team_name":"Los Angeles Lakers","team_conference":"WEST","team_division":"PACIFIC"},
+      {"team_id":15,"team_name":"Memphis Grizzlies","team_conference":"WEST","team_division":"SOUTHWEST"},
+      {"team_id":16,"team_name":"Miami Heat","team_conference":"EAST","team_division":"SOUTHEAST"},
+      {"team_id":17,"team_name":"Milwaukee Bucks","team_conference":"EAST","team_division":"CENTRAL"},
+      {"team_id":18,"team_name":"Minnesota Timberwolves","team_conference":"WEST","team_division":"NORTHWEST"},
+      {"team_id":19,"team_name":"New Orleans Pelicans","team_conference":"WEST","team_division":"SOUTHWEST"},
+      {"team_id":20,"team_name":"New York Knicks","team_conference":"EAST","team_division":"ATLANTIC"},
+      {"team_id":21,"team_name":"Oklahoma City Thunder","team_conference":"WEST","team_division":"NORTHWEST"},
+      {"team_id":22,"team_name":"Orlando Magic","team_conference":"EAST","team_division":"SOUTHEAST"},
+      {"team_id":23,"team_name":"Philadelphia 76ers","team_conference":"EAST","team_division":"ATLANTIC"},
+      {"team_id":24,"team_name":"Phoenix Suns","team_conference":"WEST","team_division":"PACIFIC"},
+      {"team_id":25,"team_name":"Portland Trail Blazers","team_conference":"WEST","team_division":"NORTHWEST"},
+      {"team_id":26,"team_name":"Sacramento Kings","team_conference":"WEST","team_division":"PACIFIC"},
+      {"team_id":27,"team_name":"San Antonio Spurs","team_conference":"WEST","team_division":"SOUTHWEST"},
+      {"team_id":28,"team_name":"Toronto Raptors","team_conference":"EAST","team_division":"ATLANTIC"},
+      {"team_id":29,"team_name":"Utah Jazz","team_conference":"WEST","team_division":"NORTHWEST"},
+      {"team_id":30,"team_name":"Washington Wizards","team_conference":"EAST","team_division":"SOUTHEAST"}
+    ]
+  }
+}

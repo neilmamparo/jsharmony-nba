@@ -1,0 +1,30 @@
+{
+    "player_listing": {
+        "layout": "grid",
+        "table": "player",
+        "title": "All Players",
+        "caption": [0, "Player", "Players"],
+        "menu": "Player/Player_Listing",
+        "actions": "BIUD",
+        "sort": ["^player_name"],
+        "buttons": [{"name": "uploadPlayerImage", "caption": "Upload Player Image", "link": "insert:player_image_select"}],
+        "default_search": [
+            {
+                "Column": "player_name"
+            }
+        ],
+        "fields": [
+            {"name": "player_image", "caption": "Photo", "control": "image", "type": "file",
+                "controlparams": {"data_folder": "Player"},
+                "controlstyle": "max-width:80px; max-height:80px;"
+            },
+            {"name": "player_id", "caption": "ID", "key": 1, "control":"hidden"},
+            {"name": "player_name", "caption": "Player", "caption_ext": "Player Name", "actions": "BI"},
+            {"name": "player_team_id", "caption": "Team", "caption_ext": "Player Team", "control": "dropdown", "actions": "BIU",
+                "lov": {
+                    "sql": "SELECT team_id code_val, team_name code_txt FROM team"
+                }},
+            {"name": "player_position", "caption": "Position", "caption_ext": "Player Position", "actions": "BIU"},
+        ]
+    }
+}

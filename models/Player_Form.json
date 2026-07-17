@@ -1,0 +1,23 @@
+{
+    "player_form": {
+        "layout": "form",
+        "table": "player",
+        "title": "Player Photo Form",
+        "caption": [0, "Player Photo", "Player Photos"],
+        "actions": "BU",
+        "onecolumn": true,
+
+        "fields": [
+            {"name": "player_id", "caption": "Player", "type": "bigint", "key": 1, "control": "dropdown", "lov": {
+                "sql": "SELECT player_id code_val, player_name code_txt FROM player ORDER BY player_name"
+            }},
+            {"name":"player_image", "caption": "Player Image", "type":"file", "control": "file_upload", "actions": "BIUD",
+            "controlparams": {
+                "data_folder": "player", 
+                "image": {
+                "format": "jpg"
+                }
+            }}
+        ]
+    }
+}

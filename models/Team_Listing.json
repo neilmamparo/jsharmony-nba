@@ -1,0 +1,50 @@
+{
+  "team_listing": {
+    "layout": "grid",
+    "table": "team",
+    "title": "All Teams",
+    "caption": [0, "Team", "Teams"],
+    "menu": "Team/Team_listing",
+    "actions": "BIUD",
+    "buttons":[{"name":"insertTeam","link":"insert:team_form"}],
+    "sort": ["^team_name"],
+    "default_search": [
+      {
+        "Column": "team_name"
+      }
+    ],
+    "fields": [
+      {
+        "name": "team_id",
+        "key": 1,
+        "control": "hidden"
+      },
+      {
+        "name": "team_name",
+        "caption": "Team",
+        "caption_ext": "Team Name",
+        "actions": "BID"
+      },
+      {
+        "name": "team_conference",
+        "caption": "Conference",
+        "caption_ext": "Team Conference",
+        "actions": "BIUD"
+      },
+      {
+        "name": "team_division",
+        "caption": "Division",
+        "caption_ext": "Team Division",
+        "actions": "BIUD"
+      },
+      {
+        "name": "view_players",
+        "caption": "Players",
+        "unbound": true,
+        "control": "linkbutton",
+        "value": "View Players",
+        "link": "browse:players_by_team&player_team_id=team_id"
+      }
+    ]
+  }
+}
