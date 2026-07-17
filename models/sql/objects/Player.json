@@ -4,7 +4,7 @@
         "table": "code_player_position",
         "caption": "Player Position",
         "columns": [
-            {"name":"code_id","type":"bigint","key":true,"identity":true,"null":false},
+            {"name":"code_id","type":"int","key":true,"identity":true,"null":false},
             {"name":"code_seq","type":"smallint"},
             {"name":"code_val","type":"varchar","length":32,"null":false,"unique":true},
             {"name":"code_txt","type":"varchar","length":50,"null":false,"unique":true},
@@ -30,10 +30,11 @@
         "type": "table",
         "caption": ["Player", "Players"],
         "columns": [
-            {"name":"player_id","type":"bigint","key":true,"identity":true,"null":false},
+            {"name":"player_id","type":"int","key":true,"identity":true,"null":false},
+            {"name":"player_api_id","type":"int","null":false,"unique":true},
             {"name":"player_name","type":"varchar","length":64,"null":false},
-            {"name":"team_id","type":"bigint","null":false,"foreignkey":{"Team":"team_id"}},
-            {"name":"player_position","type":"varchar","length":32,"null":false,"foreignkey":{"Code_Player_Position":"code_val"}},
+            {"name":"team_id","type":"int","null":false,"foreignkey":{"team":"team_id"}},
+            {"name":"player_position","type":"varchar","length":32,"foreignkey":{"code_player_position":"code_val"}},
             {"name":"player_image","type":"varchar","length":255}
         ]
     }

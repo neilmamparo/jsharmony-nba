@@ -20,7 +20,7 @@
             },
             {"name": "player_id", "caption": "ID", "key": 1, "control":"hidden"},
             {"name": "player_name", "caption": "Player", "caption_ext": "Player Name", "actions": "BI"},
-            {"name": "player_team_id", "caption": "Team", "caption_ext": "Player Team", "control": "dropdown", "actions": "BIU",
+            {"name": "team_id", "caption": "Team", "caption_ext": "Player Team", "control": "dropdown", "actions": "BIU",
                 "lov": {
                     "sql": "SELECT team_id code_val, team_name code_txt FROM team"
                 }},

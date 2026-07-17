@@ -43,7 +43,7 @@
         "unbound": true,
         "control": "linkbutton",
         "value": "View Players",
-        "link": "browse:players_by_team&player_team_id=team_id"
+        "link": "browse:players_by_team&team_id=team_id"
       }
     ]
   }

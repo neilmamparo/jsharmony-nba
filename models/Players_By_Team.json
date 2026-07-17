@@ -6,12 +6,12 @@
         "caption": [0, "Player", "Players"],
         "actions": "B",
         "sort": ["^player_name"],
-        // "sqlwhere": "player_team_id=@player_team_id",
+        "sqlwhere": "team_id=@team_id",
 
         "fields": [
             {"name": "player_id", "key": 1, "control": "hidden"},
             {"name": "player_image", "caption": "Photo", "control": "image", "type": "file", "controlparams": {"data_folder": "Player"}, "controlstyle": "max-width:80px; max-height:80px;"},
-            {"name": "player_team_id", "control": "hidden"},
+            {"name": "team_id", "control": "hidden"},
             {"name": "player_name", "caption": "Player"},
             {"name": "player_position", "caption": "Position", "caption_ext": "Player Position"}
         ]
