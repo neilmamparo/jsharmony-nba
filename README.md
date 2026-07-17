@@ -1,2 +1,2 @@
 # jsharmony-nba
-Sample NBA database using jsharmony
+NBA database using jsharmony and BallDontLie API
