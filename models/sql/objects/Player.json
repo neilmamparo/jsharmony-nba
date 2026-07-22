@@ -35,7 +35,11 @@
             {"name":"player_name","type":"varchar","length":64,"null":false},
             {"name":"team_id","type":"int","null":false,"foreignkey":{"team":"team_id"}},
             {"name":"player_position","type":"varchar","length":32,"foreignkey":{"code_player_position":"code_val"}},
-            {"name":"player_image","type":"varchar","length":255}
+            {"name":"player_image","type":"varchar","length":255},
+            {"name":"games_played","type":"int"},
+            {"name":"player_ppg","type":"float"},
+            {"name":"player_rpg","type":"float"},
+            {"name":"player_apg","type":"float"}
         ]
     }
 }

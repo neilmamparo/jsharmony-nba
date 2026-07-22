@@ -13,7 +13,10 @@
             {"name": "player_image", "caption": "Photo", "control": "image", "type": "file", "controlparams": {"data_folder": "Player"}, "controlstyle": "max-width:80px; max-height:80px;"},
             {"name": "team_id", "control": "hidden"},
             {"name": "player_name", "caption": "Player"},
-            {"name": "player_position", "caption": "Position", "caption_ext": "Player Position"}
+            {"name": "player_position", "caption": "Position", "caption_ext": "Player Position"},
+            {"name": "player_ppg", "caption": "PPG", "caption_ext": "Player Points Per Game"},
+            {"name": "player_rpg", "caption": "RPG", "caption_ext": "Player Rebounds Per Game"},
+            {"name": "player_apg", "caption": "APG", "caption_ext": "Player Assists Per Game"}
         ]
     }   
 }

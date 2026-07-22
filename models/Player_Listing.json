@@ -25,6 +25,9 @@
                     "sql": "SELECT team_id code_val, team_name code_txt FROM team"
                 }},
             {"name": "player_position", "caption": "Position", "caption_ext": "Player Position", "actions": "BIU"},
+            {"name": "player_ppg", "caption": "PPG", "caption_ext": "Player Points Per Game", "actions": "BIU"},
+            {"name": "player_rpg", "caption": "RPG", "caption_ext": "Player Rebounds Per Game", "actions": "BIU"},
+            {"name": "player_apg", "caption": "APG", "caption_ext": "Player Assists Per Game", "actions": "BIU"}
         ]
     }
 }
